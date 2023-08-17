@@ -14,7 +14,7 @@ export default function ShoppingModal() {
   );
 
   return (
-    <div className="bg-white rounded-2xl overflow-hidden">
+    <div className="bg-white rounded-2xl overflow-hidden" style={{zIndex:"1000000"}}>
       <div className="flex-col overflow-y-auto">
         {products.cartItems.map((product, index) => (
           <ProductAddedToShoppingCard key={index} {...product} />
