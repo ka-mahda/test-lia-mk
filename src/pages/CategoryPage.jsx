@@ -7,7 +7,7 @@ export default function CategoryPage() {
   //Fetching Data
   const { data, loading, hasError } = useFetch(categories);
   let dataRecieved = !loading && !hasError && !!data;
-
+console.log("fjuijid",data)
   return (
     <>
       <section className="py-20 mx-13">
@@ -16,7 +16,7 @@ export default function CategoryPage() {
         </h2>
         <section className="grid grid-cols-2 max-md:grid-cols-1 gap-16 pt-4 mt-24 w-full">
           {dataRecieved &&
-            data.map((category) => (
+            data?.map((category) => (
               <CategoryCard
                 key={category.id}
                 name={category.name}

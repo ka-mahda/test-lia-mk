@@ -1,0 +1,23 @@
+.price-section span:last-child {
+  font-size: 1.125rem;
+}
+.cartIconWrapper:hover div {
+  opacity: 1;
+  transform: scaleY(1);
+}
+.cartButton::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  background-color: #E53253;
+  padding: 0.625rem;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.875rem;
+  transform: translate(30%, -30%);
+}

@@ -42,11 +42,3 @@ export default function ProductCard({ final_price, title, large_pic, id }) {
     </>
   );
 }
-//  <>
-
-// <figure className="w-full flex-col cursor-pointer">
-//   <img className="z-10" src={categorySample} alt="" />
-//   <figcaption className="bg-[#ddd] flex-center w-full py-3 text-lg z-20 -mt-2 rounded-b-md">{name}</figcaption>
-// </figure>
-
-// </>
