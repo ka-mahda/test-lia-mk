@@ -4,7 +4,6 @@ import { categories } from "../../API/Constant";
 import shopping from "../../assets/images/icons/shopping.svg";
 import headerlogo from "../../assets/images/logo/headerlogo.svg";
 import ShoppingModal from "../product/shopping/ShoppingModal";
-import { useSelector } from "react-redux";
 import styles from "../product/shopping/styles.module.css";
 
 
@@ -13,8 +12,6 @@ export default function Header() {
   const [showShoppingCard, setShowShoppingCard] = useState(false);
   const { data, loading, hasError } = useFetch(categories);
   let dataRecieved = !loading && !hasError && !!data;
-  const products = useSelector((state) => state.cart);
-  console.log("fff11",products)
   return (
     <header className="flex-col justify-between bg-white w-full h-34 shadow-header py-4 px-10">
       <a href="/" className={`${styles.cartButton}`}>

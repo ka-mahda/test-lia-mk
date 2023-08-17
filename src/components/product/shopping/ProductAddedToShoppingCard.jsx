@@ -4,17 +4,11 @@ import productShopSample from "../../../assets/images/productsSample/image 38.pn
 import plus from "../../../assets/images/icons/plus.svg";
 import minus from "../../../assets/images/icons/minus.svg";
 import close from "../../../assets/images/icons/Close.svg";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { increaseAmount, removeItem, decreaseAmount } from "../../../redux/slice/cartReducer";
 
 export default function ProductAddedToShoppingCard({ title, id, price, amount, discountCard, final_price }) {
-  const dispatch = useDispatch();
-  const { cartItems } = useSelector((state) => state.cart);
-  const product = {
-    id,
-    title,
-    price: final_price,
-  };
+  const dispatch = useDispatch();  
 
   const handleIncreaseAmount = () => {
     dispatch(increaseAmount({ id }));

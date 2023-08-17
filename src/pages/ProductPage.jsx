@@ -1,6 +1,5 @@
 import React from "react";
 import useFetch from "../API/FetchUrl";
-//import CircularProgress from '@mui/material/CircularProgress';
 import ProductCard from "../components/product/ProductCard";
 import { useParams } from "react-router-dom";
 
