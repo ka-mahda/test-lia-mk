@@ -1,9 +1,6 @@
 import React from "react";
-//import HeaderStyle from "../../styles/HeaderStyle"
 import useFetch from "../../API/FetchUrl";
-//import CircularProgress from '@mui/material/CircularProgress';
 import { categories } from "../../API/Constant";
-//import FooterStyle from "../Styles/FooterStyle";
 import shopping from "../../assets/images/icons/shopping.svg";
 import headerlogo from "../../assets/images/logo/headerlogo.svg";
 
@@ -23,16 +20,19 @@ export default function Header() {
       <div className="flex justify-between items-center">
         <img src={shopping} height="32px" alt="logo" />
         <ul className="flex gap-7 text-sm font-normal text-navColor leading-5 transition">
-        {dataRecieved &&
-          data.map((category) => {
-            return (
-              <li 
-              className=" hover:text-primaryHover hover:font-bold transition"
-              key={category.id}>
-              {category.name}
-            </li>
-            );
-          })}
+          {dataRecieved &&
+            data.map((category) => {
+              return (
+                <a href={`/products/${category.id}`}>
+                  <li
+                    className=" hover:text-primaryHover hover:font-bold transition"
+                    key={category.id}
+                  >
+                    {category.name}
+                  </li>
+                </a>
+              );
+            })}
         </ul>
       </div>
     </header>

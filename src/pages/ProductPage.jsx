@@ -2,9 +2,13 @@ import React from "react";
 import useFetch from "../API/FetchUrl";
 //import CircularProgress from '@mui/material/CircularProgress';
 import ProductCard from "../components/product/ProductCard";
-import { products } from "../API/Constant";
+import { useParams } from "react-router-dom";
+//import { products } from "../API/Constant";
 
 export default function ProductPage() {
+  let param = useParams();
+  let products = `https://shopapi.liateam.com/api/rest/v1/get_product?categories=${param.id}`;
+
   //Fetching Data
   const { data, loading, hasError } = useFetch(products);
   let dataRecieved = !loading && !hasError && !!data;
@@ -22,12 +26,14 @@ export default function ProductPage() {
           </h2>
           <section className="grid justify-items-center grid-cols-5 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-16 pt-4 mt-24 w-full ">
             {dataRecieved &&
-              data.list.map((product) => {
+              data.list.map((product, index) => {
                 return (
                   <ProductCard
                     large_pic={product.large_pic}
+                    key={index}
                     title={product.title}
                     final_price={product.price.final_price}
+                    id={product.id}
                   />
                 );
               })}

@@ -20,9 +20,13 @@ export default function CategoryPage() {
         </h2>
         <section className="grid grid-cols-2 max-md:grid-cols-1 gap-16 pt-4 mt-24 w-full">
           {dataRecieved &&
-            data.map((category) => {
-              return <CategoryCard key={category.id} name={category.name} />;
-            })}
+            data.map((category) => (
+              <CategoryCard
+                key={category.id}
+                name={category.name}
+                id={category.id}
+              />
+            ))}
         </section>
       </section>
     </>
