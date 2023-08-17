@@ -33,7 +33,7 @@ module.exports = {
         primaryText: "rgba(255, 56, 92, 1)",
       },
       backgroundColor: {
-        mainBg: "rgba(247, 247, 247, 1)",
+        mainBg: "rgba(247, 247, 247, 1)"
       },
     },
   },
