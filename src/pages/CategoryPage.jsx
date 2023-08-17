@@ -1,6 +1,5 @@
 import React from "react";
 import useFetch from "../API/FetchUrl";
-//import CircularProgress from '@mui/material/CircularProgress';
 import { categories } from "../API/Constant";
 import CategoryCard from "../components/category/CategoryCard";
 
@@ -8,9 +7,6 @@ export default function CategoryPage() {
   //Fetching Data
   const { data, loading, hasError } = useFetch(categories);
   let dataRecieved = !loading && !hasError && !!data;
-
-  //if (loading) return <CircularProgress color="secondary" />;
-  // if (hasError) return <Alert severity="hasError">{hasError}</Alert>;
 
   return (
     <>
